@@ -17,10 +17,7 @@ class ButtonWidget extends StatelessWidget {
     return Material(
       color: getBtnColor(value),
       clipBehavior: Clip.hardEdge,
-      shape: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(100),
-        borderSide: const BorderSide(color: Colors.white30),
-      ),
+      shape: OutlineInputBorder(borderRadius: BorderRadius.circular(100)),
       child: InkWell(
         onTap: () => onBtnTap(value),
         child: Center(

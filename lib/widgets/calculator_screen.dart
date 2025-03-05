@@ -134,17 +134,19 @@ class CalculatorScreenState extends State<CalculatorScreen> {
   // Metoda zwracająca kolor przycisku
   Color getBtnColor(String value) {
     return [Btn.del, Btn.clr].contains(value)
-        ? Colors.blueGrey
+        ? Colors.blueGrey.shade500
         : [
           Btn.per,
           Btn.multiply,
           Btn.add,
           Btn.divide,
-          Btn.calculate,
           Btn.subtract,
         ].contains(value)
         ? Colors.orange
-        : Colors.black38;
+        : value == Btn.calculate
+        ? Colors
+            .redAccent // Tutaj dodajemy inny kolor dla calculate
+        : Colors.black;
   }
 
   // Metoda obsługująca kliknięcie przycisku
